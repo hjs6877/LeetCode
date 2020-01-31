@@ -13,17 +13,19 @@ public class TwoSum {
     }
 
     public int[] twoSum(int[] nums, int target) {
-        Map<Integer, Integer> map = new HashMap<>();
-        int[] ret = new int[2];
-        for (int i = 0; i< nums.length; i++) {
-            if (map.containsKey(target-nums[i])) {
-                ret[0] = map.get(target-nums[i]);
-                ret[1] = i;
-                break;
+        Map<Integer, Integer> numsMap = new HashMap<>();
+        int[] result = new int[2];
+        for(int i = 0; i < nums.length; i++){
+            int num1 = target - nums[i];
+            if(numsMap.containsKey(num1)){
+                result[0] = numsMap.get(num1);
+                result[1] = i;
             }
-            map.put(nums[i], i);
+
+            numsMap.put(nums[i], i);
         }
-        return ret;
+
+        return result;
     }
 
 }
