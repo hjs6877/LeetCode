@@ -22,7 +22,7 @@ public class ReverseInteger {
 
         if(x < 0)
             result = -result;
-        if(result < Math.round(Math.pow(-2, 31)) || result > Math.round(Math.pow(2, 31)) - 1)
+        if(result < Integer.MIN_VALUE || result > Integer.MAX_VALUE)
             result = 0;
 
         return (int)result;
